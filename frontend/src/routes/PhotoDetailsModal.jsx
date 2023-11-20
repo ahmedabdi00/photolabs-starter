@@ -5,11 +5,7 @@ import PhotoListItem from 'components/PhotoListItem';
 
 import '../styles/PhotoDetailsModal.scss';
 
-
 const PhotoDetailsModal = (props) => {
-  //console.log(props);
-
-  // Class Names for Image on Modal Page
   const modalPagePhotos = {
     divClass: "photo-list__item",
     imgClass: "photo-details-modal__image",
@@ -34,7 +30,6 @@ const PhotoDetailsModal = (props) => {
       </button>
 
       {props.isModalActive && <>
-
         <PhotoListItem
           data={props.clickedPhotoData}
           setClickedPhotoData={props.setClickedPhotoData}
@@ -45,7 +40,7 @@ const PhotoDetailsModal = (props) => {
 
         <h5 className="photo-details-modal__header">Similar Photos</h5>
 
-        <ul className="photo-details-modal__top-bar">
+        <ul className={modalPagePhotos.listClass}>
           <PhotoList
             data={Object.values(props.clickedPhotoData.similar_photos)}
             imgClass={props.imgClass}
@@ -53,11 +48,9 @@ const PhotoDetailsModal = (props) => {
             setFavouritePhotos={props.setFavouritePhotos}
           />
         </ul>
-      </>
-      }
+      </>}
     </div>
   );
-
 };
 
 export default PhotoDetailsModal;
