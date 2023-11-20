@@ -15,17 +15,16 @@ const App = () => {
   //   }).catch(err => console.log('Unexpected error code', err))
   // }, [])
 
-  useEffect(() => {
-    const topicsApi = `/api/topics`;
-    const photosApi = `/api/photos`;
+  // useEffect(() => {
+  //   const topicsApi = `/api/topics`;
+  //   const photosApi = `/api/photos`;
 
-    Promise.all([axios.get(topicsApi), axios.get(photosApi)]).then((all) => {
-      const [topics, photos] = all;
-      console.log(all);
-      // setAppData(topics.data, photos.data);
-    }).catch(err => console.log("An unexpected error occured", err))
-  }, []);
-
+  //   Promise.all([axios.get(topicsApi), axios.get(photosApi)]).then((all) => {
+  //     const [topics, photos] = all;
+  //     console.log(all);
+  //     // setAppData(topics.data, photos.data);
+  //   }).catch(err => console.log("An unexpected error occured", err))
+  // }, []);
 
 
 
